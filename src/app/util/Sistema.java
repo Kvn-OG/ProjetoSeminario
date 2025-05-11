@@ -8,12 +8,12 @@ import java.util.Scanner;
 public class Sistema {
     private boolean rodando = true;
     private ArrayList<Seminario> seminarios = new ArrayList<>();
-    Sistema sys = new Sistema();
     Scanner input = new Scanner(System.in);
+    private Seminario s = new Seminario();
 
     public void gerenciarSeminarios(){
         while (rodando){
-
+            exibirMenu();
         }
     }
 
@@ -27,6 +27,17 @@ public class Sistema {
         int opcao = obterOpcao();
 
         switch (opcao){
+            case 1 -> {
+                s.criarSeminario(input);
+                continueOperation();
+            }
+            case 2 -> {
+                s.listarSeminario();
+            }
+            case 3 -> {
+                rodando = false;
+                System.out.println("Encerrando programa...");
+            }
 
         }
     }
@@ -40,5 +51,15 @@ public class Sistema {
          input.nextLine();
 
          return opcao;
+    }
+
+    private void continueOperation(){
+        String response = "";
+        System.out.println("Deseja fazer outra operação ? (s/n): ");
+        response = input.nextLine().toLowerCase();
+        if (!response.equals("s")){
+            rodando = false;
+            System.out.println("Encerrando programa...");
+        }
     }
 }

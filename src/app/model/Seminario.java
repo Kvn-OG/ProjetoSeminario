@@ -69,6 +69,10 @@ public class Seminario {
         } while (resposta == 's');
     }
 
+    public void listarSeminario(){
+        print();
+    }
+
     public Local getLocal() {
         return local;
     }

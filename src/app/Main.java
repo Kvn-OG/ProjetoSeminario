@@ -1,14 +1,11 @@
 package app;
 
-import app.model.Seminario;
-
-import java.util.Scanner;
+import app.util.Sistema;
 
 public class Main {
     public static void main(String[] args) {
-        Seminario s = new Seminario();
-        Scanner input = new Scanner(System.in);
+        Sistema sys = new Sistema();
 
-        s.criarSeminario(input);
+        sys.gerenciarSeminarios();
     }
 }
